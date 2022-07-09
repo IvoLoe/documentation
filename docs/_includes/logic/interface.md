@@ -16,11 +16,14 @@
 {% for group in site.data.orderSections %}
 	{% assign headerType = group.headerType %}
 		{% assign bShowHeader = true %}
+		
 		{% capture mainFileName %}_includes/content/interfaces/{{interfaceName}}/{{group.name}}.md{% endcapture %}
 		{% assign mainFile = site.documents | find_exp:"item", "item.path == mainFileName" %}
 		{% if mainFile != nil %}
-{{headerType}} {{group.title}}				
+{{headerType}} {{group.title}}
+
 {% include {{mainFileName | remove:'_includes/'}}	%}
+
 		{% endif %}
 {% endfor %}
 
