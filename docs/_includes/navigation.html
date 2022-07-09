@@ -1,0 +1,16 @@
+<nav>
+	{% for item in site.data.navigation %}
+		<a href="{{ item.link }}" {% if page.url == item.link %}style="text-decoration: underline;"{% endif %}>
+		  {{ item.name }}
+		</a>
+	{% endfor %}
+	{% assign files = site.documents | where_exp:"item", "item.path contains '_includes/content'" | sort: "modified_time" | reverse %}
+		{% for file in files %}
+		<div id="updateInfo">
+updated {{file.modified_time | truncate: 10, "" }}
+		</div>
+			{% break %}
+		{% endfor %}
+</nav>
+
+

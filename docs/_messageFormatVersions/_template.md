@@ -1,0 +1,4 @@
+---
+linkSchema: ...
+---
+{% include messageFormat.md %}
