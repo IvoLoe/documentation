@@ -1,0 +1,1 @@
+This message is designed to transmit outgoing transport orders from Scope customers to external freight transportation service providers like trucker or rail for example.
