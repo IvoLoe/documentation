@@ -1,6 +1,6 @@
 ---
-name: ScopeEventOutbound
-title: Scope Event Outbound Interface
-group: forwarding
+name: InterfaceB
+title: Interface B
+group: legacy
 ---
 {% include logic/interface.md %}
