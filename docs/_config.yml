@@ -1,0 +1,46 @@
+collections:
+    interfaces:
+        output: true
+    interfaceVersions:
+        output: true
+    messageFormats:
+        output: true
+    messageFormatVersions:
+        output: true
+    webservices:
+        output: true     
+    includes:
+        output: false
+    contents:
+        output: false
+defaults:
+  - scope:
+      path: ""        
+      type: "interfaces"
+    values:
+      layout: "default"
+  - scope:
+      path: ""        
+      type: "interfaceVersions"
+    values:
+      layout: "default"
+  - scope:
+      path: ""        
+      type: "messageFormats"
+    values:
+      layout: "default"
+  - scope:
+      path: ""        
+      type: "messageFormatVersions"
+    values:
+      layout: "default"
+  - scope:
+      path: ""        
+      type: "webservices"
+    values:
+      layout: "default"         
+  - scope:
+      path: ""        
+      type: ""
+    values:
+      layout: "default"

@@ -1,0 +1,95 @@
+	body{
+      font-family: sans-serif;
+	  display: grid;
+	  grid-template-rows: 1.25em 1.5em 1fr 1.25em 3em;
+	  height: 99vh;
+	  margin: 0 auto;
+	  max-width: 60em;
+	  padding-top: .25em;	
+	}
+
+	header {
+	  display: grid;
+	  grid-template-columns: auto auto;
+	  grid-row: 2;	
+	  border-width: .1em;
+	  border-bottom-style:solid;		
+	}
+
+	nav {
+	  grid-row: 1;
+	  display: grid;
+	  grid-template-columns: auto auto auto auto;
+	  gap: 1em;
+	}
+
+	article {	
+	  grid-row: 3;		
+	  overflow: scroll;
+	  padding-top: .5em;	
+	}
+
+	footer {
+	  border-width: .1em;
+	  border-top-style:solid;
+	  grid-row: 5;	
+	  display: grid;
+	  grid-template-columns: auto auto auto;
+	  padding-top: .25em;				
+	}
+
+	ul { 
+		list-style-type:  square ;
+	}
+
+	a { 
+		text-decoration: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 95%;
+	}
+
+	table, th, td {
+	  border: 1px solid black;
+	  text-align: left;
+	  vertical-align: top;
+	}
+
+	th, td {
+	  padding-left: 0.5em;
+	  padding-right: 0.5em;
+	}
+
+	td:last-child {
+		min-width: 60%;
+	}
+
+	caption { 
+	  caption-side: top;
+	}
+
+	#updateInfo {
+	justify-self: end;
+	}
+
+	.top {
+		justify-self: center; 
+	}
+
+	#hostInfo {
+		grid-column: 2;
+		justify-self: center; 	
+		text-align: center;
+	}
+
+	#contactInfo {
+		grid-column: 2;
+		justify-self: center; 
+		text-align: center;
+	}
+
+	.tbd {
+	color: olive;
+	}
