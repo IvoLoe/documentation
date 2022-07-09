@@ -121,7 +121,7 @@
 <th>Version</th><th>Schema</th><th>Comment</th>
 	{% for version in versions %}
 <tr>
-		{% capture changeInfoPath %}/content/messageFormats/{{messageFormatName}}/{{version.title}}/Changes{% endcapture %}
+		{% capture changeInfoPath %}content/messageFormats/{{messageFormatName}}/{{version.title}}/Changes{% endcapture %}
 		{% assign changeInfoFile = site.documents | find_exp:"item", "item.path contains changeInfoPath" %}		
 			{% assign versionUrl = version.url %}	
 			{% assign sMessageFormat = version.messageFormat %}
