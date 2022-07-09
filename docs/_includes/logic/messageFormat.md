@@ -15,7 +15,6 @@
 		{% capture currentVersionTitle %}{{currentVersion.title}}{% endcapture %}
 		{% capture versionPath %}{{mainPath}}{{currentVersion}}/{% endcapture %}
 	{% endif %}
-
 {% else %}
 
 [comment]: # ( get main path for content )
@@ -28,12 +27,10 @@
 	{% capture mainPath %}/content/messageformats/{{ messageFormatName }}/{% endcapture %}
 	{% assign currentVersion = page %}
 	{% assign currentVersionTitle = page.title %}
-
 	{% assign versions = site.messageFormatVersions | where_exp:"item", "item.url contains messageFormatName" | sort: "sortId" | reverse %}
 
 [comment]: # ( get version path for content )
 	{% capture versionPath %}/content/messageformats{{page.url | remove: "/messageFormatVersions" | remove: ".html" }}/{% endcapture %}
-
 {% endif %}
 
 
@@ -53,12 +50,14 @@
 {% for group in site.data.orderSections %}
 	{% assign headerType = group.headerType %}
 	{% if group.name == "SchemaInfo" %}
-		{% capture mainFileName %}_includes/content/messageFormats/{{messageFormatName}}/{{group.name}}.md{% endcapture %}
+		{% capture mainFileName %} _includes/content/messageFormats/{{messageFormatName}}/{{group.name}}.md {% endcapture %}
+		
 		{% assign mainFile = site.documents | find_exp:"item", "item.path == mainFileName" %}
 		{% if mainFile != nil %}
 {{headerType}} {{group.title}}
 {% include {{mainFileName | remove:'_includes/'}} %}
 [{{currentVersion.linkSchema}}]({{currentVersion.linkSchema}})
+
 		{% endif %}
 	{% else %}
 			{% assign bShowHeader = true %}
@@ -72,6 +71,7 @@
 					{% assign bShowHeader = false %}						
 				{% endif %}		
 {% include {{mainFileName | remove:'_includes/'}}	%}
+
 			{% endif %}
 			
 			{% if versionFile != nil %}
@@ -80,7 +80,8 @@
 					{% assign bShowHeader = false %}						
 				{% endif %}			
 {% include {{versionFileName | remove:'_includes/'}}	%}
-			{% endif %}	
+
+	{% endif %}	
 	{% endif %}	
 {% endfor %}
 
