@@ -45,6 +45,7 @@
 
 [comment]: # ( list all content files - general and version specific )
 {% assign fileMainList = site.documents | where_exp:"item", "item.path contains messageFormatName" | where_exp:"item", "item.path contains '_includes/content/messageFormats'" | sort: "name" %}
+
 {% assign fileVersionList = fileMainList | where_exp:"item", "item.path contains currentVersionTitle" | sort: "path" %}
 
 {% for group in site.data.orderSections %}
@@ -55,7 +56,9 @@
 		{% assign mainFile = site.documents | find_exp:"item", "item.path == mainFileName" %}
 		{% if mainFile != nil %}
 {{headerType}} {{group.title}}
-{% include {{mainFileName | remove:'_includes/'}} %}
+
+
+
 [{{currentVersion.linkSchema}}]({{currentVersion.linkSchema}})
 
 		{% endif %}
@@ -70,16 +73,17 @@
 {{headerType}} {{group.title}}				
 					{% assign bShowHeader = false %}						
 				{% endif %}		
-{% include {{mainFileName | remove:'_includes/'}}	%}
+
 
 			{% endif %}
-			
+
 			{% if versionFile != nil %}
 				{% if bShowHeader %}
-{{headerType}} {{group.title}}					
-					{% assign bShowHeader = false %}						
-				{% endif %}			
-{% include {{versionFileName | remove:'_includes/'}}	%}
+{{headerType}} {{group.title}}
+					{% assign bShowHeader = false %}					
+				{% endif %}
+				
+
 
 	{% endif %}	
 	{% endif %}	
