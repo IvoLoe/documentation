@@ -1,2 +1,0 @@
-### Schema Info
-bla bal
